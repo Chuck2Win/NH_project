@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser(description = '필요한 변수')
 parser.add_argument('--train_file', default='.data/train.zip')
 parser.add_argument('--test_file', default='.data/test.zip')
 parser.add_argument('--max_len', default = 64)
-parser.add_argment('--stopword', default = ['재배포 금지','무단배포', '무단전재'])
+parser.add_argument('--stopword', default = ['재배포 금지','무단배포', '무단전재'])
 
 if __name__ == '__main__':
 # save  
