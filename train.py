@@ -60,7 +60,7 @@ def train():
             scheduler.step()
                  
         
-        if epoch%5 == 0:
+        if epoch%5 == 0: # 5 epoch마다 train, validation 계산
             # train
             with torch.no_grad():
                 model.eval()
@@ -112,7 +112,7 @@ def train():
                 else:
                     if min_value < curr_loss:
                         count+=1
-                        if count == 2:
+                        if count == 2: # epoch 10동안 해당 모델의 validation 값이 커지면 중단.
                             torch.save(min_model, './at_%d_model'%(min_epoch))
                             break
                     else:
