@@ -6,7 +6,7 @@ import pandas as pd
 from kobert_transformers import get_tokenizer
 import argparse
 from sklearn.model_selection import train_test_split
-
+from imblearn.over_sampling  import RandomOverSampler
 parser = argparse.ArgumentParser(description = '필요한 변수')
 # Input data
 parser.add_argument('--train_file', default='./data/train_data.zip')
@@ -16,9 +16,11 @@ parser.add_argument('--test_file', default='./data/test_data.zip')
 parser.add_argument('--max_len', default = 64)
 parser.add_argument('--class_1_max_len', default = 512)
 parser.add_argument('--stopword', default = ['재배포 금지','무단배포', '무단전재'])
-
+parser.add_argument('--oversampling', default = True)
 if __name__ == '__main__':
-# save  
+
+    
+    # save  
     args = parser.parse_args()
     tokenizer = get_tokenizer()
 
@@ -67,8 +69,27 @@ if __name__ == '__main__':
     train_data,val_data = train_test_split(train_data,test_size = args.val_size,shuffle = True)
     val_data, test_data_ = train_test_split(val_data, test_size = args.test_size,shuffle = True)
     
-    ## 저장하기(pickle 형태로)
-    train_data.to_pickle('./data/train_data_preprocessed')
-    val_data.to_pickle('./data/val_data_preprocessed')
+    # oversampling
+    if args.oversampling:
+        train_X = train_data.loc[:,['ids','mask','length','longer','shorter']]
+        train_y = train_data['info']
+        val_X = val_data.loc[:,['ids','mask','length','longer','shorter']]
+        val_y = val_data['info']
+        X_samp, y_samp = RandomOverSampler().fit_sample(train_X.to_numpy(), train_y) # ids, mask, ord, length 순
+        Val_X_samp,Val_y_samp = RandomOverSampler().fit_sample(val_X.to_numpy(), val_y) # ids, mask, length, longer, shorter 순
+        sampled_train_y = df(y_samp.tolist(),columns=['info'])
+        sampled_val_y = df(Val_y_samp.tolist(),columns=['info'])
+        sampled_train = df(X_samp.tolist(),columns=train_X.columns)
+        sampled_val = df(Val_X_samp.tolist(),columns=train_X.columns)
+        Sampled_train = pd.concat([sampled_train,sampled_train_y],axis=1)
+        Sampled_val = pd.concat([sampled_val,sampled_val_y],axis=1)
+        Sampled_train.to_pickle('./data/train_data_preprocessed_over')
+        Sampled_val.to_pickle('./data/val_data_preprocessed_over')
+    else:
+        ## 저장하기(pickle 형태로)
+        train_data.to_pickle('./data/train_data_preprocessed')
+        val_data.to_pickle('./data/val_data_preprocessed')
+    
+    
     test_data_.to_pickle('./data/test_data_preprocessed_')
     test_data.to_pickle('./data/test_data_preprocessed')
