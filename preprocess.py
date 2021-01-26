@@ -5,11 +5,16 @@ import torch
 import pandas as pd
 from kobert_transformers import get_tokenizer
 import argparse
+from sklearn.model_selection import train_test_split
+
 parser = argparse.ArgumentParser(description = '필요한 변수')
 # Input data
 parser.add_argument('--train_file', default='./data/train_data.zip')
+parser.add_argument('--val_size', default = 0.05)
+parser.add_argument('--test_size', default = 0.2)                  
 parser.add_argument('--test_file', default='./data/test_data.zip')
 parser.add_argument('--max_len', default = 64)
+parser.add_argument('--class_1_max_len', default = 512)
 parser.add_argument('--stopword', default = ['재배포 금지','무단배포', '무단전재'])
 
 if __name__ == '__main__':
@@ -49,8 +54,21 @@ if __name__ == '__main__':
 
     train_data['mask']=(torch.tensor(train_data['ids'].tolist()).eq(1)==0).long().tolist()
     test_data['mask']=(torch.tensor(test_data['ids'].tolist()).eq(1)==0).long().tolist()
-
+    
+    # longer 길이가 class 1의 최대값보다 큰 경우 1, 아니면 0
+    train_data['longer'] = train_data['length']>args.class_1_max_len
+    train_data['longer'] = train_data['longer'].astype(int)
+    
+    # shorter 길이가 class 1의 최대값보다 작거나 같은 경우 1, 아니면 0
+    train_data['shorter'] = train_data['length']<=args.class_1_max_len
+    train_data['shorter'] = train_data['shorter'].astype(int)
+    
+    # train test split
+    train_data,val_data = train_test_split(train_data,test_size = args.val_size,shuffle = True)
+    val_data, test_data_ = train_test_split(val_data, test_size = args.test_size,shuffle = True)
+    
     ## 저장하기(pickle 형태로)
     train_data.to_pickle('./data/train_data_preprocessed')
+    val_data.to_pickle('./data/val_data_preprocessed')
+    test_data_.to_pickle('./data/test_data_preprocessed_')
     test_data.to_pickle('./data/test_data_preprocessed')
-
