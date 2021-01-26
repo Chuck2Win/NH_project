@@ -18,8 +18,6 @@ parser.add_argument('--class_1_max_len', default = 512)
 parser.add_argument('--stopword', default = ['재배포 금지','무단배포', '무단전재'])
 parser.add_argument('--oversampling', default = True)
 if __name__ == '__main__':
-
-    
     # save  
     args = parser.parse_args()
     tokenizer = get_tokenizer()
