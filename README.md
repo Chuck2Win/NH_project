@@ -16,12 +16,13 @@ feature로는 기사 데이터에서 본문 기사와, 해당 기사의 길이, 
 
 ## 환경  
 학습은 google colab pro에서 함. GPU : Tesla p100  
-colab 기본 설치 library 외에 transformers, imbalanced-learn, kobert-transformers를 설치  
-requirements.txt(전체 colab에 있는 library 외에 위 3개 library가 추가됨)  
+colab 기본 설치 library 외에 transformers, imbalanced-learn, kobert-transformers, sentencepiece를 설치  
+requirements.txt(전체 colab에 있는 library 외에 위 4개 library가 추가됨)  
 colab을 활용하는 경우 아래 코드만 기입해서 실시하면 됨.  
 ! pip3 install transformers  
 ! pip3 install imbalanced-learn  
 ! pip3 install kobert-transformers  
+! pip install sentencepiece
 
 requirements.txt로 설치하는 경우  
 pip install -r requirements.txt
