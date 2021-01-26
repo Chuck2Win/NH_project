@@ -7,8 +7,8 @@ from kobert_transformers import get_tokenizer
 tokenizer = get_tokenizer()
 
 # 데이터 읽어오기
-train_data=pd.read_csv('./train_data.csv',header=0)
-test_data=pd.read_csv('./test_data.csv',header=0)
+train_data=pd.read_csv('./data/train_data.csv',header=0)
+test_data=pd.read_csv('./data/test_data.csv',header=0)
 
 # stop word 제거 (현재는 재배포 금지, 무단배포, 무단전재만을 넣어둠)
 def remove_stopword(data, stopword_list=['재배포 금지','무단배포', '무단전재']):
@@ -40,6 +40,6 @@ train_data['mask']=(torch.tensor(train_data['ids'].tolist()).eq(1)==0).long().to
 test_data['mask']=(torch.tensor(test_data['ids'].tolist()).eq(1)==0).long().tolist()
 
 ## 저장하기(pickle 형태로)
-train_data.to_pickle('./train_data_preprocessed')
-test_data.to_pickle('./test_data_preprocessed')
+train_data.to_pickle('./data/train_data_preprocessed')
+test_data.to_pickle('./data/test_data_preprocessed')
 
