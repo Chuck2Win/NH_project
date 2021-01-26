@@ -7,8 +7,8 @@ from kobert_transformers import get_tokenizer
 import argparse
 parser = argparse.ArgumentParser(description = '필요한 변수')
 # Input data
-parser.add_argument('--train_file', default='./data/train.zip')
-parser.add_argument('--test_file', default='./data/test.zip')
+parser.add_argument('--train_file', default='./data/train_data.zip')
+parser.add_argument('--test_file', default='./data/test_data.zip')
 parser.add_argument('--max_len', default = 64)
 parser.add_argument('--stopword', default = ['재배포 금지','무단배포', '무단전재'])
 
