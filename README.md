@@ -30,6 +30,12 @@ pip install -r requirements.txt
 ## 경량화 시킨 모델
 
 ## 코드 실행
+git clone https://github.com/Chuck2Win/NH_project.git
+cd NH_project
+pip install -r requirements.txt
+! python3 preprocess.py # preprocessing
+! python3 train.py # train
+
 ### 데이터 전처리
 ### 데이터 학습
 ### Inference
