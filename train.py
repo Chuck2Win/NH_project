@@ -128,8 +128,8 @@ if __name__ == '__main__':
     kobert = get_kobert_model()
     
     # data load
-    train_data = pd.read_pickle(args.train_file_over if args.oversampling else args.train_file)
-    val_data = pd.read_pickle(args.val_file_over if args.oversampling else args.val_file)
+    train_data = pd.read_pickle(args.over_train_file if args.oversampling else args.train_file)
+    val_data = pd.read_pickle(args.over_val_file if args.oversampling else args.val_file)
     test_data = pd.read_pickle(args.test_file)
     # tensor dataset으로 묶어주기
     train_data = TensorDataset(torch.LongTensor(train_data['ids'].tolist()), torch.LongTensor(train_data['mask'].tolist()), torch.LongTensor(train_data['length'].tolist()), torch.LongTensor(train_data['longer'].tolist()), torch.LongTensor(train_data['shorter'].tolist()), torch.LongTensor(train_data['info'].tolist()))
