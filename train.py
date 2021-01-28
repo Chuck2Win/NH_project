@@ -36,7 +36,6 @@ def train():
     min_epoch = None
     min_model = None
     count = 0
-    print(args.epochs+1)
     for epoch in tqdm(range(1, args.epochs+1), desc='epoch', mininterval = 300):
         total_loss = 0
         Predicted=[]
