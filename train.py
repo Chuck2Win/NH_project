@@ -54,7 +54,6 @@ def train():
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
             optimizer.step()
-            scheduler.step()
                  
         
         if epoch%5 == 0: # 5 epoch마다 train, validation 계산
@@ -148,6 +147,4 @@ if __name__ == '__main__':
     model = kobert_classifier(kobert).to(device)
     optimizer = AdamW(model.parameters(), lr = args.learning_rate, eps = args.eps, weight_decay = args.weight_decay)
     epochs = args.epochs
-    total_steps = len(train_dataloader) * epochs
-    scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps = 0, num_training_steps = total_steps)
     train()   
