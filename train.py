@@ -126,7 +126,7 @@ if __name__ == '__main__':
     # SKT에서 개발한 BERT Tokenizer와 BERT model load 
     tokenizer = get_tokenizer()
     kobert = get_kobert_model()
-    
+    print(args.epochs)
     # data load
     train_data = pd.read_pickle(args.over_train_file if args.oversampling else args.train_file)
     val_data = pd.read_pickle(args.over_val_file if args.oversampling else args.val_file)
