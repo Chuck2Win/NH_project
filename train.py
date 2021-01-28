@@ -20,23 +20,24 @@ parser.add_argument('--max_len', default = 64)
 parser.add_argument('--class_1_max_len', default = 512)
 parser.add_argument('--stopword', default = ['재배포 금지','무단배포', '무단전재'])
 parser.add_argument('--oversampling', default = True)
-parser.add_argument('--train_file', default='./data/train_data_preprocessed')
-parser.add_argument('--val_file', default='./data/val_data_preprocessed')
-parser.add_argument('--test_file', default='./data/test_data_preprocessed_')
-parser.add_argument('--over_train_file', default='./data/train_data_preprocessed_over')
-parser.add_argument('--over_val_file', default='./data/val_data_preprocessed_over')
-parser.add_argument('--batch_size', default=256)
-parser.add_argument('--learning_rate', default=1e-6)
-parser.add_argument('--eps', default=1e-8)
-parser.add_argument('--weight_decay', default=1e-2)
-parser.add_argument('--epochs', default=100)
+parser.add_argument('--train_file', default = './data/train_data_preprocessed')
+parser.add_argument('--val_file', default = './data/val_data_preprocessed')
+parser.add_argument('--test_file', default = './data/test_data_preprocessed_')
+parser.add_argument('--over_train_file', default = './data/train_data_preprocessed_over')
+parser.add_argument('--over_val_file', default = './data/val_data_preprocessed_over')
+parser.add_argument('--batch_size', default = 256)
+parser.add_argument('--learning_rate', default = 1e-6)
+parser.add_argument('--eps', default = 1e-8)
+parser.add_argument('--weight_decay', default = 1e-2)
+parser.add_argument('--epochs', default = 100)
 
 def train():
     min_value = float('inf')
     min_epoch = None
     min_model = None
     count = 0
-    for epoch in tqdm(range(1, args.epochs+1),desc='epoch',mininterval = 300):
+    print(args.epochs+1)
+    for epoch in tqdm(range(1, args.epochs+1), desc='epoch', mininterval = 300):
         total_loss = 0
         Predicted=[]
         Actual=[]
