@@ -10,14 +10,14 @@ from sklearn.model_selection import train_test_split
 from imblearn.over_sampling  import RandomOverSampler
 parser = argparse.ArgumentParser(description = '필요한 변수')
 # Input data
-parser.add_argument('--train_file', default='./data/train_data.zip')
-parser.add_argument('--val_size', default = 0.05)
-parser.add_argument('--test_size', default = 0.2)                  
-parser.add_argument('--test_file', default='./data/test_data.zip')
-parser.add_argument('--max_len', default = 64)
-parser.add_argument('--class_1_max_len', default = 512)
-parser.add_argument('--stopword', default = ['재배포 금지','무단배포', '무단전재'])
-parser.add_argument('--oversampling', default = True)
+parser.add_argument('--train_file', default='./data/train_data.zip', type = str)
+parser.add_argument('--val_size', default = 0.05, type = float)
+parser.add_argument('--test_size', default = 0.2, type = float)                  
+parser.add_argument('--test_file', default='./data/test_data.zip', type = str)
+parser.add_argument('--max_len', default = 64, type = int)
+parser.add_argument('--class_1_max_len', default = 512, type = int)
+parser.add_argument('--stopword', default = ['재배포 금지','무단배포', '무단전재'], type = list)
+parser.add_argument('--oversampling', default = True, type = bool)
 if __name__ == '__main__':
     # save  
     args = parser.parse_args()
