@@ -116,7 +116,7 @@ def train():
                         min_value = curr_loss
                         min_epoch = copy.copy(epoch)
                         min_model = copy.deepcopy(model.state_dict())
-    
+    torch.save(min_model,'./at_%d_model'%(min_epoch))
     
     
 
