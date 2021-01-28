@@ -3,6 +3,7 @@
 import re
 import torch
 import pandas as pd
+from pandas import DataFrame as df
 from kobert_transformers import get_tokenizer
 import argparse
 from sklearn.model_selection import train_test_split
