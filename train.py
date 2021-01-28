@@ -16,9 +16,6 @@ from model import kobert_classifier
 import argparse
 parser = argparse.ArgumentParser(description = '필요한 변수')
 # Input data
-parser = argparse.ArgumentParser(description = '필요한 변수')
-# Input data
-
 parser.add_argument('--max_len', default = 64)
 parser.add_argument('--class_1_max_len', default = 512)
 parser.add_argument('--stopword', default = ['재배포 금지','무단배포', '무단전재'])
