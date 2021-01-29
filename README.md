@@ -34,7 +34,7 @@ pip install -r requirements.txt
 git clone https://github.com/Chuck2Win/NH_project.git  
 cd NH_project  
 pip install -r requirements.txt  
-python3 preprocess.py # preprocessing  
+python3 preprocess.py # preprocessing(train test split, over sampling 도 포함)  
 python3 train.py # train  
-python3 inference.py --input_data = (input data 위치) --model = (model의 위치) --result = (결과를 저장할 위치)  
+python3 inference.py --input_data = (input data 위치) --model = (model의 위치) --result = (결과를 저장할 위치) #inference  
 
