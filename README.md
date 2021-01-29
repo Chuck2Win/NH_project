@@ -38,3 +38,6 @@ python3 preprocess.py # preprocessing(train test split, over sampling 도 포함
 python3 train.py # train  
 python3 inference.py --input_data = (input data 위치) --model = (model의 위치) --result = (결과를 저장할 위치) #inference  
 
+## 코드 실행
+### 1. [TEST].ipynb  
+해당 파일은 저장된 모델을 불러와서, 데이터를 전처리하고 데이터를 예측하는 과정을 담은 파일임.  
