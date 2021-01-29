@@ -29,14 +29,12 @@ pip install -r requirements.txt
 
 ## 경량화 시킨 모델
 
-## 코드 실행
+## 코드 실행  
+### 각각의 실행 파일에 들어가서 보시면, 바꿀 수 있는 hyper parameter들이 있습니다.
 git clone https://github.com/Chuck2Win/NH_project.git
 cd NH_project
 pip install -r requirements.txt
-! python3 preprocess.py # preprocessing
-! python3 train.py # train
-
-### 데이터 전처리
-### 데이터 학습
-### Inference
+python3 preprocess.py # preprocessing
+python3 train.py # train
+python3 inference.py --input_data = (input data 위치) --model = (model의 위치) --result = (결과를 저장할 위치)
 
