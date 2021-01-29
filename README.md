@@ -7,7 +7,7 @@ https://dacon.io/competitions/official/235658/data/
 정확성 지표로는 200여 팀에서 상위 20등에 들었고, 속도는 비공개했기 때문에 상위 몇등인지는 모름.  
 
 ## 모델  
-![model](https://github.com/Chuck2Win/NH_project/blob/main/result/kobertmodel.jpeg)  
+![model](https://github.com/Chuck2Win/NH_project/blob/main/result/kobertmodel.jpg)  
 ### 1. Feature  
 feature로는 기사 데이터에서 본문 기사와, 해당 기사의 길이, 그리고 길이가 512이상인지 아닌지의 것만 활용함  
 
