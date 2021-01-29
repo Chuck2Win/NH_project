@@ -50,9 +50,6 @@ if __name__ == '__main__':
     test_data['ids'] = test_data['content'].apply(lambda i : tokenizer.encode(i,add_special_tokens=True,truncation=True,padding='max_length',max_length=args.max_len))
 
     # attention mask - mask될 부분은 0, 아닌 부분은 1
-    attention_masks_train=(torch.tensor(train_data['ids'].tolist()).eq(1)==0).long()
-    attention_masks_test=(torch.tensor(test_data['ids'].tolist()).eq(1)==0).long()
-
     train_data['mask']=(torch.tensor(train_data['ids'].tolist()).eq(1)==0).long().tolist()
     test_data['mask']=(torch.tensor(test_data['ids'].tolist()).eq(1)==0).long().tolist()
     
