@@ -29,7 +29,9 @@ colab을 활용하는 경우 아래 코드만 기입해서 실시하면 됨.
 requirements.txt로 설치하는 경우  
 pip install -r requirements.txt
 
-## 경량화 시킨 모델
+## 경량화 시킨 모델  
+teacher를 원래 model, student를 lstm를 이용한 분류기  
+![model](https://github.com/Chuck2Win/NH_project/blob/main/result/distill.jpg)  
 
 ## 코드 실행    
 ### 각각의 실행 파일에 들어가서 보시면, 바꿀 수 있는 hyper parameter들이 있습니다.  
