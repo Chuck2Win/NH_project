@@ -55,4 +55,5 @@ python3 inference.py --input_data = (input data 위치) --model = (model의 위�
 ## 코드 그 외
 ### 1. [TEST].ipynb  
 해당 파일은 저장된 모델을 불러와서, 데이터를 전처리하고 데이터를 예측하는 과정을 담은 파일임.  
-### 2. 
+### 2. 데이콘][BERT][중복제거없이][oversampling][distill].ipynb
+해당 파일은 STUDENT MODEL을 학습시키는 과정임, 이 때 데이터에는 Teacher Model의 Logit 값이 있어야함.  
