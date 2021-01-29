@@ -11,7 +11,7 @@ https://dacon.io/competitions/official/235658/data/
 feature로는 기사 데이터에서 본문 기사와, 해당 기사의 길이, 그리고 길이가 512이상인지 아닌지의 것만 활용함  
 
 ### 2. Train data, Val data, Test data 결과
-
+![이미지 이름](이미지 URL)
 ### 3. 속도 측면
 
 ## 환경  
