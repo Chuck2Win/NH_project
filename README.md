@@ -6,12 +6,12 @@ https://dacon.io/competitions/official/235658/data/
 정확성 (70%) + 속도(30%)  
 정확성 지표로는 200여 팀에서 상위 20등에 들었고, 속도는 비공개했기 때문에 상위 몇등인지는 모름.  
 
-## 모델  
+## 모델    
 ![model](https://github.com/Chuck2Win/NH_project/blob/main/result/kobertmodel.jpg)  
 ### 1. Feature  
 feature로는 기사 데이터에서 본문 기사와, 해당 기사의 길이, 그리고 길이가 512이상인지 아닌지의 것만 활용함  
 
-### 2. Train data, Val data, Test data 결과
+### 2. Train, Val, Test data 결과
 ![train val test](https://github.com/Chuck2Win/NH_project/blob/main/result/train_val_test.png)
 ### 3. 속도 측면  
 ![train val test](https://github.com/Chuck2Win/NH_project/blob/main/result/speed.png)
@@ -33,6 +33,16 @@ pip install -r requirements.txt
 teacher를 원래 model, student를 lstm를 이용한 분류기  
 ![model](https://github.com/Chuck2Win/NH_project/blob/main/result/distill.jpg)  
 
+### Train, Val, Test data 결과
+![model](https://github.com/Chuck2Win/NH_project/blob/main/result/distilltrainvaltest.png)  
+
+### 속도 측면
+![model](https://github.com/Chuck2Win/NH_project/blob/main/result/distillspeed.png)  
+
+### 정리  
+정확성은 떨어졌으나, 속도가 매우 빨라졌음(32배 증가)    
+Total parameter : 기존 (92,188,424) -> 경량(1,288,968) (1.3% 수준)     
+
 ## 코드 실행    
 ### 각각의 실행 파일에 들어가서 보시면, 바꿀 수 있는 hyper parameter들이 있습니다.  
 git clone https://github.com/Chuck2Win/NH_project.git  
@@ -42,6 +52,7 @@ python3 preprocess.py # preprocessing(train test split, over sampling 도 포함
 python3 train.py # train  
 python3 inference.py --input_data = (input data 위치) --model = (model의 위치) --result = (결과를 저장할 위치) #inference  
 
-## 코드 실행
+## 코드 그 외
 ### 1. [TEST].ipynb  
 해당 파일은 저장된 모델을 불러와서, 데이터를 전처리하고 데이터를 예측하는 과정을 담은 파일임.  
+### 2. 
