@@ -17,6 +17,7 @@ feature로는 기사 데이터에서 본문 기사와, 해당 기사의 길이, 
 ![train val test](https://github.com/Chuck2Win/NH_project/blob/main/result/speed.png)
 
 ## 환경  
+### 데이터는 파기해서, code만 참고하시면 될 것 같습니다.
 학습은 google colab pro에서 함. GPU : Tesla p100  
 colab 기본 설치 library 외에 transformers, imbalanced-learn, kobert-transformers, sentencepiece를 설치  
 requirements.txt(전체 colab에 있는 library 외에 위 4개 library가 추가됨)  
