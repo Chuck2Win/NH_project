@@ -4,7 +4,7 @@ https://dacon.io/competitions/official/235658/data/
 
 ## 평가지표  
 정확성 (70%) + 속도(30%)  
-정확성 지표로는 200여 팀에서 상위 20등에 들었고, 속도는 비공개했기 때문에 상위 몇등인지는 모름.  
+상위 20등.  
 
 ## 모델    
 ![model](https://github.com/Chuck2Win/NH_project/blob/main/result/kobertmodel.jpg)  
