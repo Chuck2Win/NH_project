@@ -9,10 +9,10 @@ https://dacon.io/competitions/official/235658/data/
 (해당 데이터는 데이콘에 남아있는 예시 파일임. 문제가 될 시 삭제하겠음)  
 n_id : id, date : 날짜, title : 제목, content : 본문 내용, ord : 해당 날짜의 발행된 기사 순서, info : 0이면 뉴스 1이면 광고  
 
-![data](https://github.com/Chuck2Win/NH_project/blob/main/result/data2.png)  
-
+![data](https://github.com/Chuck2Win/NH_project/blob/main/result/data2.png)    
+![data](https://github.com/Chuck2Win/NH_project/blob/main/result/data3.png)  
 광고보다 뉴스의 수가 더 많고, 광고의 길이가 평균적으로 뉴스보다 짧음.  
-광고의 경우 중복되는 비율이 매우 높음.  
+광고의 경우 중복(content기준)되는 비율이 매우 높음.  
 
 
 ## 평가지표  
