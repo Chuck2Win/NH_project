@@ -21,6 +21,10 @@ n_id : id, date : 날짜, title : 제목, content : 본문 내용, ord : 해당 
 
 ## 모델    
 ![model](https://github.com/Chuck2Win/NH_project/blob/main/result/kobertmodel.jpg)  
+### 0. description  
+undersampling, oversampling, randomsampling 중에서 oversampling이 가장 성능이 좋았음.(epoch 10, BCE기준)    
+oversampling을 했을 시, 중복제거x와 중복제거 중 중복제거x가 더 성능이 좋았음.(epoch 10, BCE기준)    
+그래서 oversampling+중복제거x로 학습진행    
 ### 1. Feature  
 feature로는 기사 데이터에서 본문 기사와, 해당 기사의 길이, 그리고 길이가 512이상인지 아닌지의 것만 활용함  
 
