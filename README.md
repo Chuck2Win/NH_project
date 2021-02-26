@@ -1,4 +1,4 @@
-# 해당 데이터는 파기 완료했습니다.
+## 해당 데이터는 파기 완료했습니다.
 
 # NH 투자증권 project
 https://dacon.io/competitions/official/235658/data/  
