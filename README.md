@@ -5,7 +5,8 @@ https://dacon.io/competitions/official/235658/data/
 주어진 기사 데이터를 토대로, 광고성 기사인지 유의미한 정보를 담고 있는 기사인지를 판별하는 알고리즘 개발하기  
 
 # Data Description
-![data](https://github.com/Chuck2Win/NH_project/blob/main/result/data.jpg)  
+![data](https://github.com/Chuck2Win/NH_project/blob/main/result/data.jpg) 
+(해당 데이터는 데이콘에 남아있는 예시 파일임. 문제가 될 시 삭제하겠음)  
 n_id : id, date : 날짜, title : 제목, content : 본문 내용, ord : 해당 날짜의 발행된 기사 순서, info : 0이면 뉴스 1이면 광고  
 
 ![data](https://github.com/Chuck2Win/NH_project/blob/main/result/data2.jpg)  
