@@ -1,3 +1,5 @@
+# 해당 데이터는 파기 완료했습니다.
+
 # NH 투자증권 project
 https://dacon.io/competitions/official/235658/data/  
 주어진 기사 데이터를 토대로, 광고성 기사인지 유의미한 정보를 담고 있는 기사인지를 판별하는 알고리즘 개발하기  
